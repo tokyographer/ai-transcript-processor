@@ -2,17 +2,24 @@ import React from 'react';
 import './App.css';
 import Sidebar from './components/Sidebar';
 import Header from './components/Header';
-import MainContent from './components/MainContent';
+import Dashboard from './components/Dashboard';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Contacts from './components/Contacts';
 
 function App() {
   return (
-    <div className="flex">
+    <Router>
+    <div className="flex h-screen">
       <Sidebar />
-      <div className="flex-1">
+      <div className="flex-1 flex flex-col">
         <Header />
-        <MainContent />
+        <Routes>
+          <Route path="/contacts" element={<Contacts />} />
+          <Route path="/" element={<Dashboard />} />
+        </Routes>
       </div>
     </div>
+  </Router>
   );
 }
 
