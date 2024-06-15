@@ -1,19 +1,25 @@
+// src/components/Sidebar.js
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function Sidebar() {
+const Sidebar = () => {
   return (
-    <div className="w-64 h-screen bg-gray-800 text-white">
-      <ul>
-        <li className="p-4 hover:bg-gray-700">
-          <Link to="/">Dashboard</Link>
-        </li>
-        <li className="p-4 hover:bg-gray-700">
-          <Link to="/contacts">Contacts</Link>
-        </li>
-        <li className="p-4 hover:bg-gray-700">Deals</li>
-        <li className="p-4 hover:bg-gray-700">Settings</li>
-      </ul>
+    <div className="bg-gray-800 text-white w-64 p-4">
+      <nav>
+        <ul>
+          <li className="mb-2">
+            <Link to="/">Dashboard</Link>
+          </li>
+          <li className="mb-2">
+            <Link to="/contacts">Contacts</Link>
+          </li>
+          <li className="mb-2">
+            <Link to="/settings">Settings</Link>
+          </li>
+          {/* Add more links as needed */}
+        </ul>
+      </nav>
     </div>
   );
 }
